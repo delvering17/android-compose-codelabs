@@ -1,3 +1,27 @@
+### delvering17's compose practice
+
+compose를 배워보자!
+https://developer.android.com/courses/pathways/compose
+
+branch : delver
+
+실습 commit은 MyCompose
+
+<220522>
+- Jetpack Compose의 기초 / BasicsCodelab
+
+
+
+
+
+
+
+
+
+
+----
+
+
 # Jetpack Compose Codelabs
 
 This repository contains a set of Android Studio projects to help you learn about
