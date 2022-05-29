@@ -73,9 +73,6 @@ fun ReplyListAndDetailContent(
 ) {
     Row(modifier = modifier, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
         LazyColumn(modifier = modifier.weight(1f)) {
-            item {
-                ReplySearchBar(modifier = Modifier.fillMaxWidth())
-            }
             items(replyHomeUIState.emails) { email ->
                 ReplyEmailListItem(email = email)
             }
@@ -93,14 +90,14 @@ fun ReplyListAndDetailContent(
 fun ReplyEmailListItem(
     email: Email,
     modifier: Modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp)) {
-    Card(modifier = modifier) {
+    Card(modifier = modifier,) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(20.dp)
         ) {
             Row(modifier = Modifier.fillMaxWidth()) {
-               ReplyProfileImage(
+                ReplyProfileImage(
                     drawableResource = email.sender.avatar,
                     description = email.sender.fullName,
                 )
@@ -156,14 +153,14 @@ fun ReplyEmailListItem(
 fun ReplyEmailThreadItem(
     email: Email,
     modifier: Modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp)) {
-    Card(modifier = modifier, colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)) {
+    Card(modifier = modifier,  colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(20.dp)
         ) {
             Row(modifier = Modifier.fillMaxWidth()) {
-              ReplyProfileImage(
+                ReplyProfileImage(
                     drawableResource = email.sender.avatar,
                     description = email.sender.fullName,
                 )
@@ -178,7 +175,7 @@ fun ReplyEmailThreadItem(
                         style = MaterialTheme.typography.labelMedium
                     )
                     Text(
-                        text = "20 mins ago",
+                        text = email.createAt,
                         style = MaterialTheme.typography.labelMedium,
                         color = MaterialTheme.colorScheme.outline
                     )
@@ -271,17 +268,15 @@ fun ReplySearchBar(modifier: Modifier = Modifier) {
         )
         Text(text = stringResource(id = R.string.search_replies),
             modifier = Modifier
-                .weight(1f)
-                .padding(16.dp),
+            .weight(1f)
+            .padding(16.dp),
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.outline
         )
         ReplyProfileImage(
             drawableResource = R.drawable.avatar_6,
             description = stringResource(id = R.string.profile),
-            modifier = Modifier
-                .padding(12.dp)
-                .size(32.dp)
+            modifier = Modifier.padding(12.dp).size(32.dp)
         )
     }
 }

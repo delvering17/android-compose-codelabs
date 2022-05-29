@@ -15,15 +15,10 @@
  */
 
 buildscript {
-    ext {
-        kotlin_version = '1.6.10'
-        compose_version = '1.1.1'
-        navigation_compose_version = '2.4.0-beta02'
-        activity_compose_version = '1.4.0'
-        material_version = '1.4.0'
-        coroutines_version = '1.5.2'
-        accompanist_version = '0.23.1'
-    }
+    ext.kotlin_version = '1.6.10'
+    ext.compose_version = '1.1.1'
+    ext.coroutines_version = '1.5.2'
+    ext.accompanist_version = '0.23.1'
 
     repositories {
         google()
